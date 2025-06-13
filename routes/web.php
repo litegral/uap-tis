@@ -28,4 +28,12 @@ $router->group(['prefix' => 'auth'], function () use ($router) {
 $router->group(['middleware' => 'auth'], function () use ($router) {
     $router->get('mahasiswa', 'MahasiswaController@index');
     $router->get('mahasiswa/prodi/{id}', 'MahasiswaController@getByProdi');
+    $router->get('prodi', 'ProdiController@index');
+});
+
+$router->group(['prefix' => 'matkul', 'middleware' => 'auth'], function () use ($router) {
+    $router->get('/', 'MatakuliahController@index');
+    $router->get('saya', 'MatakuliahController@myMatakuliahs');
+    $router->post('tambah', 'MatakuliahController@storeToMahasiswa');
+    $router->get('{id}', 'MatakuliahController@isMatkulRegistered');
 });
