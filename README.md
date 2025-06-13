@@ -51,3 +51,6 @@ Here is a list of all the endpoints available in this application.
 ## Database schema
 
 ![Database Schema](db-siam.png)
+
+## SS Database
+![Screenshot](ss db.png)
