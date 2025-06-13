@@ -11,4 +11,10 @@ class ProdiController extends Controller
         $prodi = Prodi::all();
         return response()->json($prodi);
     }
+
+    public function publicIndex()
+    {
+        $prodi = Prodi::all(['id', 'nama']);
+        return response()->json($prodi);
+    }
 } 

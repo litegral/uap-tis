@@ -37,3 +37,7 @@ $router->group(['prefix' => 'matkul', 'middleware' => 'auth'], function () use (
     $router->post('tambah', 'MatakuliahController@storeToMahasiswa');
     $router->get('{id}', 'MatakuliahController@isMatkulRegistered');
 });
+
+$router->group(['prefix' => 'public'], function () use ($router) {
+    $router->get('prodi', 'ProdiController@publicIndex');
+});
